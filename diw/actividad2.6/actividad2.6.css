@@ -1,0 +1,192 @@
+/*.container2{
+    display: flex;
+    flex-wrap:wrap;
+    
+    justify-content: center;
+}*/
+
+@media (min-width: 500px){
+    h1{
+        color: violet;
+        width: 100%;
+        text-align: center;
+    }
+    .p1{
+        text-align: center;
+        color: violet;
+        width: 100%;
+    }
+    
+    .container2{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-flow: column;
+        color: violet;
+        text-align: center;
+    }
+    .com1{
+        background-color: lightpink;
+        border-radius:5px;  
+        padding-top: 1rem;
+    
+    }
+    .container3{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 1rem;
+    }
+    .nombre{
+        color: white;
+    }
+    .rango{
+        color: violet;
+    }
+    .comentario{
+        color: white;
+    }
+
+    .colton{
+        border-radius: 5px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: blueviolet;
+        margin-bottom: 1rem;   
+    }
+    .anne{
+        border-radius: 5px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: blueviolet;
+        margin-bottom: 1rem;
+    }
+    .irene{
+        border-radius: 5px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: blueviolet;
+        margin-bottom: 1rem;
+    }
+    .foto{
+        border-radius: 50%;
+    }
+    .cont-persona{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+    }
+    .comentario{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        justify-content: center;
+    }
+    .rango{
+        padding-left: 33%;
+        
+
+    }
+    .nombre{
+        padding-left:10%;
+    }
+}
+
+@media (max-width: 542px){
+    h1{
+        color: violet;
+        width: 100%;
+        text-align: center;
+    }
+    .p1{
+        text-align: center;
+        color: violet;
+        width: 100%;
+    }
+    header{
+        width: 45%;
+        position:absolute;
+    }
+
+    .container2{
+        width: 45%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        flex-flow: column;
+        color: violet;
+        text-align: center;
+        padding-left: 50%;
+        padding-top: 1.5rem
+    }
+    .com1{
+        background-color: lightpink;
+        border-radius:5px;  
+        padding-top: 1rem;
+    
+    }
+    .container3{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 3rem;
+    }
+    .nombre{
+        color: white;
+    }
+    .rango{
+        color: violet;
+    }
+    .comentario{
+        color: white;
+    }
+
+    .colton{
+        border-radius: 5px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: blueviolet;
+        margin-bottom: 1rem;   
+    }
+    .anne{
+        border-radius: 5px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: blueviolet;
+        margin-bottom: 1rem;
+    }
+    .irene{
+        border-radius: 5px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        background-color: blueviolet;
+        margin-bottom: 1rem;
+    }
+    .foto{
+        border-radius: 50%;
+    }
+    .cont-persona{
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        padding-top: 1rem;
+    }
+    .comentario{
+        padding-left: 2rem;
+        padding-right: 2rem;
+        justify-content: center;
+    }
+    .rango{
+        padding-left: 33%;
+        
+
+    }
+    .nombre{
+        padding-left:10%;
+    }
+}

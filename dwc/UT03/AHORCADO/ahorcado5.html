@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin : 0;
+            padding: 0;
+        }
+        .contenedor{
+            background-color: rgba(17, 129, 129, 0.5);
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            margin: 0 auto;
+            align-items: center;
+            align-content: center;
+            border: 1px solid black;
+            border-radius: 10px;
+            
+        }
+        #letra{
+            margin-top: 1em;
+        }
+        span{
+            background-color: rgba(131, 131, 131, 0.466);
+            border:1px solid black;
+            padding: 1em;
+        }
+        #marcador{
+            display:flex;
+        }
+     /*
+         main{
+            width: 40%;
+            margin: 0 auto;
+            display:flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        } */
+       
+        img{
+            width: 80%;
+            border: 1px solid black;
+            align-self: center;
+        }
+        #controles{
+            display: flex;
+            justify-content: center;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="contenedor">
+        <h1>Juego Ahorcado</h1>
+        <h2 id="info"></h2>
+        <div id="imagen">   
+            <img src="img/0.png" alt="1">
+    
+        </div>
+        <div id="controles">
+            <label for="letra"></label><input type="text" id="letra"><button id="probar">Probar</button>
+        </div>
+        <div id="marcador">
+    
+        </div>
+
+    </div>
+
+    
+    <script>
+        
+        let marcador = document.getElementById('marcador');
+        let palabra ="nava"
+        let letra = document.getElementById('letra')
+        let arrayPalabra=[]
+        let secreta = [];
+        let info = document.getElementById('info')
+        let probar = document.getElementById('probar')
+        let limite = 7;
+        let intentos = 0;
+        let letrasPulsadas = []
+
+        function cuantas(palabra,letra){
+            
+        }
+
+      
+        function pintarCuadros(palabra,donde){
+            let cadena=""
+            //arrayPalabra = [...palabra]
+            for (let e of palabra){      
+                cadena=cadena+'<span> </span>'
+                arrayPalabra.push(e)
+            }
+            donde.innerHTML=cadena
+        }
+
+        function enPantalla(arrayPalabra){
+            let cade="";
+            for (i of array){
+                cadena+=`<span> ${i}</span>`
+            }
+            return cade;
+        }
+
+        function Mostrar(arrayPalabra){
+            let cadena="";
+            for (i of arrayPalabra){
+                cadena+=`<span> ${i}</span>`
+            }
+            return cadena;
+        }
+
+
+        probar.addEventListener('click',()=>{
+            letra1 = letra.value;
+            posicion = secreta.indexOf(letra1)
+            if (posicion==-1){
+                intentos++
+            }
+            imagen.innerHTML=`<img src="img/${intentos}.png" alt="">`;
+            while (posicion!= -1){
+                pregreso[posicion]=letra1;
+                secreta[posicion]="";
+                posicion=secreta.indexOf(letra1)
+                let cad = Mostrar(progreso);
+
+            }
+            if (intentos == 6){
+                probar.setAttribute('disabled',true);
+                info.innerHTML="Has perdido";
+
+            }
+        })
+       
+        pintarCuadros(palabra,marcador)
+      /*  document.getElementsByTagName('button')[0].addEventListener('click',()=>{
+         //   document.getElementById("imagen").innerHTML = "<img src=img/1.png>"
+            intentos++
+            if(cuantas(palabra,letra.value)>0){
+                imagen.innerHTML=`<img src="img/${intentos}.png" alt="">`;
+                while (cuantas(palabra,letra.value)>0){
+                    let pos=PosicionLetraEnPalabra(arrayPalabra,letra)
+                    arrayPalabra[pos]="";
+                    pintarSpan(pos,letra.value)
+                }
+            }else{
+                ahorcaUnPocoMas()
+                if (intentos == 6){
+                   // probar.setAttribute('disabled',true);
+                   // info.innerHTML="Has perdido";
+                   HasTerminado();
+                   MensajeHasPerdido()
+                }
+                if(EstaEnBlanco(arrayPalabra)){
+
+                }
+
+            }
+            letrasPulsadas.push(letra.value)
+        })*/
+    </script>
+</body>
+</html>

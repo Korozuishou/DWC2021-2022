@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .azul{
+            color: blue;
+        }
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li class="red">uno</li>
+        <li class="azul" visible=false>uno</li>
+        <li class="azul" hidden>uno</li>
+        <input id="text"type="text" value = "DAW" placeholder="introduce tu ciclo" disabled>
+    </ul>
+    <script>
+        let lis = document.getElementsByClassName('azul');
+        let lis2 = document.getElementsByTagName('li')
+        let lis3 = document.querySelectorAll('.azul')
+        let lis4 = document.querySelectorAll('li')
+
+        //Para mostrar el valor de un atributo se utiliza el método getAttribute
+        for(li of lis4){
+            console.log(li.getAttribute('class'))
+        }
+
+        //Para modificar el valor de un atributo se utiliza el método setAttribute
+        lis2[1].setAttribute('visible',true);
+
+        //Para eliminar un atributo se utiliza removeAttribute
+        lis2[2].removeAttribute('hidden');
+
+        //Para preguntar si un elemento tiene una propiedad se utiliza hasAttribute
+       console.log (lis[0].hasAttribute('hidden'))
+       console.log (lis[0].hasAttribute('class'))
+
+
+        //Para los atributos como hidden,enabled,... podemos utilizar el método
+        //toggleAttribute para invertir su valor
+        lis[0].addEventListener('click',()=>{
+            lis[0].toggleAttribute('hidden')
+        })
+        //Obtener todos los atributos de una etiqueta, se usa la propiedad attributes
+        //es una colección.
+        for (at of document.getElementById('text').attributes){
+            console.log(`El atributo ${at.name}: ${at.value}`)
+        }
+    </script>
+</body>
+</html>

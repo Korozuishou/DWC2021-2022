@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="letra" type="text" placeholder="Dame una letra" maxlength="1">
+    <button id="boton">Comprobar</button>
+    <div id="resultado"></div>
+    <h2>Intentos</h2>
+    <div id="intentos"></div>
+    <h2>Historial</h2>
+    <div id="historial"></div>
+
+    <script>
+
+        let Palabra = '';
+        let palabraAdivinar = [];
+        let palabraMostrar = [];
+        let historialLetrasUsuario = [];
+        let numIntentos = 5;
+        let Letra = document.getElementById('letra');
+        let Boton = document.getElementsByTagName('button');
+        let Resultado = document.getElementById('resultado');
+        let Intentos = document.getElementById('intentos');
+        let Historial = document.getElementById('historial');
+
+        function prepararJuego(Palabra) {
+            Palabra = "caballo"
+            for (let letra of Palabra) {
+                palabraMostrar.push('_');
+            }
+        }
+        
+
+       function dibujarJuego(historialLetrasUsuario, numIntentos, Intentos, Historial, Resultado, palabraMostrar) {
+            Resultado.textContent = palabraMostrar.join(' ');
+            Intentos.textContent = numIntentos;
+            Historial.textContent = historialLetrasUsuario.join(' ');
+        }
+
+        function comprobarLetraUsuario(Letra, palabraMostrar, Palabra) {
+            console.log(Letra)
+
+            let letraUsuario = Letra.value;
+            for (const [posicion, letraAdivinar] of Palabra) {
+                if (letraUsuario == letraAdivinar) {
+                    palabraMostrar[posicion] = letraAdivinar;
+                }
+            }
+            if (!Palabra.includes(letraUsuario)) {
+                numIntentos -= 1;
+                historialLetrasUsuario.push(letraUsuario);
+            }
+            acabarJuego();
+            dibujarJuego();
+        }
+        function comprobarPulsadoEnter(evento) {
+            if (evento.code == 'click') {
+                comprobarLetraUsuario();
+            }
+        }
+        function acabarJuego() {
+            if (!palabraMostrar.includes('_')) {
+                alert('Has ganado!');
+                location.reload(true);
+            }
+            if (numIntentos == 0) {
+                alert('Has Perdido! Era: ' + Palabra.join(''));
+                location.reload(true);
+            }
+        }
+        
+        Boton[0].addEventListener('click', () => {
+            if(this.Boton == undefined){
+                return comprobarLetraUsuario(Letra);
+            }
+        }
+
+
+        )
+      
+        
+        prepararJuego();
+
+
+    </script>
+
+</body>
+
+</html>
