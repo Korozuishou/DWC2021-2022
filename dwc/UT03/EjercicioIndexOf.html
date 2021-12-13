@@ -16,9 +16,17 @@
         let caracter = prompt("Di el caracter ");
         let Posicion = Palabras.indexOf(caracter);
      
+<<<<<<< HEAD
        for (let i in Palabras) {
            console.log(Palabras.charAt(0))
        }
+=======
+        while (Posicion != -1) {
+            Contador++;
+            Posicion = Palabras.indexOf(caracter, Posicion + 1);
+            document.write(` El caracter ${caracter} aparece ${Contador} veces en ${Palabras}<br>`);
+        }
+>>>>>>> fb88aea7d78435c65aee1f824673970165f923e5
     </script>
 
 </body>
